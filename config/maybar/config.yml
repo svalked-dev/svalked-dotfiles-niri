@@ -1,0 +1,31 @@
+bar:
+  height: 34
+  location: top
+  background: 1a1b26ff
+  foreground: c0caf5ff
+  font: "JetBrainsMono Nerd Font:size=11"
+  spacing: 10
+  left-margin: 12
+  right-margin: 12
+
+  left:
+    - clock:
+        content:
+          - string: {text: " {time}", foreground: e0af68ff}
+    - cpu:
+        content:
+          - map:
+              conditions:
+                id == -1:
+                  string: {text: "  {cpu}%", foreground: 7dcfffff}
+    - mem:
+        content:
+          - string: {text: "  {percent_used}%", foreground: bb9af7ff}
+
+  right:
+    - pulse:
+        content:
+          - string: {text: "  {sink_percent}%", foreground: 7aa2f7ff}
+    - network:
+        content:
+          - string: {text: "  {ssid}", foreground: 9ece6aff}
